@@ -124,7 +124,10 @@ function _viewModelPluginInstance(pluginFunction) {
 }
 
 var _templateUrlConverter = function(basePath, url) {
-  if (!url.match(/^[^\/]*:/) && !url.match(/^\//) && !url.match(/^\[/) && !url.match(/^#?$/)) {
+  if (url.match(/\{\{.*?\}\}/) || url.match(url.match(/\{%.*?%\}/))) {
+    return url;
+  }
+  else if (!url.match(/^[^\/]*:/) && !url.match(/^\//) && !url.match(/^\[/) && !url.match(/^#?$/)) {
     // TODO this could be smarter joining the urls...
     return basePath + url;
   } else {

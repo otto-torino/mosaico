@@ -101,6 +101,8 @@ ko.bindingHandlers.wysiwygSrc = {
           if (typeof ko.bindingHandlers.wysiwygSrc.svg == 'string' && isPlaceholder) {
             var svgcode = ko.bindingHandlers.wysiwygSrc.svg.replace('__WIDTH__', w).replace('__HEIGHT__', h).replace('__TEXT__', text);
             element.setAttribute('src', 'data:image/svg+xml;base64,'+global.btoa(svgcode));
+          } else {
+            element.setAttribute('src', src);
           }
           if (ko.bindingHandlers['wysiwygSrc'].preloadingClass) element.classList.add(ko.bindingHandlers['wysiwygSrc'].preloadingClass);
           var img = $(element).data('preloadimg');
