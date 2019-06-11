@@ -301,6 +301,7 @@ ko.bindingHandlers.wysiwyg = {
       schema: "html5",
       extended_valid_elements: 'strong/b,em/i,*[*]',
       menubar: false,
+      convert_urls: false,
       skin: 'gray-flat',
       // 2018-03-07: the force_*_newlines are not effective. force_root_block is the property dealing with newlines, now.
       // force_br_newlines: !fullEditor, // we force BR as newline when NOT in full editor
